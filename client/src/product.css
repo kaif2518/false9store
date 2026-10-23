@@ -1,0 +1,40 @@
+/* links on the jersey card */
+.card-image-link { display: block; color: inherit; }
+.card-name a { color: inherit; text-decoration: none; }
+.card-name a:hover { text-decoration: underline; }
+.photo-count { position: absolute; bottom: 8px; right: 8px; padding: 3px 8px; background: #fff; color: var(--ink); font-size: 12px; font-weight: 600; }
+
+/* product page */
+.pd { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 48px; align-items: start; }
+.pd-back { display: inline-block; margin-bottom: 24px; }
+.pd-gallery { min-width: 0; }
+.pd-viewer { position: relative; background: var(--tile); }
+.pd-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.pd-track::-webkit-scrollbar { display: none; }
+.pd-slide { flex: 0 0 100%; display: grid; place-items: center; aspect-ratio: 4 / 5; scroll-snap-align: start; }
+.pd-slide img { width: 100%; height: 100%; object-fit: cover; }
+.pd-arrow { position: absolute; top: 50%; width: 40px; height: 40px; transform: translateY(-50%); border: 1px solid var(--ink); background: #fff; color: var(--ink); font-size: 20px; cursor: pointer; }
+.pd-arrow.prev { left: 12px; }
+.pd-arrow.next { right: 12px; }
+.pd-arrow:disabled { opacity: 0.35; cursor: not-allowed; }
+.pd-counter { position: absolute; bottom: 12px; right: 12px; padding: 3px 10px; background: #fff; font-size: 13px; font-weight: 600; }
+.pd-thumbs { display: flex; gap: 10px; margin-top: 12px; overflow-x: auto; }
+.pd-thumb { flex: 0 0 72px; aspect-ratio: 4 / 5; padding: 0; border: 2px solid transparent; background: var(--tile); opacity: 0.7; cursor: pointer; }
+.pd-thumb.active { border-color: var(--black); opacity: 1; }
+.pd-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.pd-info h2 { margin: 8px 0; font-size: 44px; font-weight: 800; }
+.pd-meta { margin: 0 0 16px; color: var(--gray); }
+.pd-price { display: flex; align-items: baseline; gap: 12px; margin: 0 0 24px; }
+.pd-price .price-sale { font-size: 28px; }
+.pd-label { margin: 0 0 10px; font-size: 14px; font-weight: 700; }
+.pd-sizes { margin-top: 0; }
+.pd-sizes .chip { min-width: 48px; height: 42px; }
+.pd-info .add-btn { margin-top: 20px; padding: 14px; font-size: 15px; }
+.pd-note { margin: 16px 0 0; font-size: 14px; color: var(--gray); }
+.pd-desc { margin: 28px 0 0; padding-top: 20px; border-top: 1px solid var(--line); white-space: pre-line; }
+
+@media (max-width: 800px) {
+  .pd { grid-template-columns: 1fr; gap: 24px; }
+  .pd-arrow { display: none; }
+  .pd-info h2 { font-size: 36px; }
+}

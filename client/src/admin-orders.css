@@ -1,0 +1,150 @@
+.or-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
+}
+
+.or-filter {
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.or-filter.active {
+  border-color: var(--black);
+  background: var(--black);
+  color: #fff;
+}
+
+.or-search {
+  display: flex;
+  gap: 8px;
+  margin: 0 0 20px;
+  max-width: 480px;
+}
+
+.or-search input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.or-search input:focus {
+  outline: none;
+  border-color: var(--black);
+}
+
+.or-status {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid var(--black);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.or-status.delivered {
+  background: var(--black);
+  color: #fff;
+}
+
+.or-status.cancelled {
+  border-color: var(--line);
+  color: var(--gray);
+}
+
+.or-pager {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.or-pager button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.or-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 20px 0;
+}
+
+.or-box {
+  padding: 16px;
+  border: 1px solid var(--line);
+  background: var(--tile);
+  font-size: 14px;
+}
+
+.or-box h3 {
+  margin: 0 0 10px;
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 16px;
+}
+
+.or-box p {
+  margin: 4px 0;
+}
+
+.or-totals {
+  max-width: 320px;
+  margin: 16px 0 0 auto;
+  font-size: 14px;
+}
+
+.or-totals div {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
+.or-totals .or-grand {
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px solid var(--black);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.or-update {
+  margin-top: 28px;
+  padding: 16px;
+  border: 1px solid var(--black);
+  max-width: 420px;
+}
+
+.or-update select {
+  width: 100%;
+  margin: 10px 0 12px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  text-transform: capitalize;
+}
+
+@media (max-width: 700px) {
+  .or-grid {
+    grid-template-columns: 1fr;
+  }
+}
