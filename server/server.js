@@ -5,7 +5,21 @@ const connectDB = require("./config/db");
 
 const app = express();
 
-app.use(cors());
+// websites allowed to call this server, from the CLIENT_URL setting (comma separated)
+const allowedOrigins = (process.env.CLIENT_URL || "http://localhost:5173")
+  .split(",")
+  .map((url) => url.trim())
+  .filter(Boolean);
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      // no origin means a tool like Postman, which is allowed
+      if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
+      callback(null, false);
+    },
+  })
+);
 app.use(express.json());
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/jerseys", require("./routes/jerseyRoutes"));

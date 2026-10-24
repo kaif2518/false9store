@@ -21,6 +21,7 @@
     "razorpay": "^2.9.8"
   },
   "devDependencies": {
+    "start": "node server.js",
     "nodemon": "^3.1.14"
   }
 }
